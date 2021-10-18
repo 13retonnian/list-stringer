@@ -26,6 +26,7 @@ const nouns = [
 // 1. Create a function `handleItem()` that accepts the (JS-created) array `item` (the noun) as a parameter.
 let itemString = "";
 let index = 0;
+const nounParagraph = document.querySelector(".nouns");
 const handleItem = function(item) {
   item = item.charAt(0).toUpperCase() + item.substr(1, item.length);
   
@@ -41,10 +42,8 @@ const handleItem = function(item) {
   {
     itemString += `${item}.`;
   }
-
-  index++;
-  console.log(item);
-  console.log(itemString);
+  index++;  
+  nounParagraph.textContent = itemString;
 }
 
 nouns.forEach(handleItem);
